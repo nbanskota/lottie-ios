@@ -6,11 +6,11 @@
 //
 
 /// The animatable transform for a layer. Controls position, rotation, scale, and opacity.
-final class Transform: Codable, DictionaryInitializable {
+public class Transform: Codable, DictionaryInitializable {
 
   // MARK: Lifecycle
 
-  required init(from decoder: Decoder) throws {
+  public required init(from decoder: Decoder) throws {
     /// This manual override of decode is required because we want to throw an error
     /// in the case that there is not position data.
     let container = try decoder.container(keyedBy: Transform.CodingKeys.self)
@@ -77,7 +77,7 @@ final class Transform: Codable, DictionaryInitializable {
       .decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .opacity) ?? KeyframeGroup(LottieVector1D(100))
   }
 
-  init(dictionary: [String: Any]) throws {
+    required public init(dictionary: [String: Any]) throws {
     if
       let anchorPointDictionary = dictionary[CodingKeys.anchorPoint.rawValue] as? [String: Any],
       let anchorPoint = try? KeyframeGroup<LottieVector3D>(dictionary: anchorPointDictionary)
@@ -227,31 +227,31 @@ final class Transform: Codable, DictionaryInitializable {
   }
 
   /// The anchor point of the transform.
-  let anchorPoint: KeyframeGroup<LottieVector3D>
+  var anchorPoint: KeyframeGroup<LottieVector3D>
 
   /// The position of the transform. This is nil if the position data was split.
-  let position: KeyframeGroup<LottieVector3D>?
+    var position: KeyframeGroup<LottieVector3D>?
 
   /// The positionX of the transform. This is nil if the position property is set.
-  let positionX: KeyframeGroup<LottieVector1D>?
+    var positionX: KeyframeGroup<LottieVector1D>?
 
   /// The positionY of the transform. This is nil if the position property is set.
-  let positionY: KeyframeGroup<LottieVector1D>?
+    var positionY: KeyframeGroup<LottieVector1D>?
 
   /// The scale of the transform.
-  let scale: KeyframeGroup<LottieVector3D>
+    var scale: KeyframeGroup<LottieVector3D>
 
   /// The rotation of the transform on X axis.
-  let rotationX: KeyframeGroup<LottieVector1D>
+    var rotationX: KeyframeGroup<LottieVector1D>
 
   /// The rotation of the transform on Y axis.
-  let rotationY: KeyframeGroup<LottieVector1D>
+    var rotationY: KeyframeGroup<LottieVector1D>
 
   /// The rotation of the transform on Z axis.
-  let rotationZ: KeyframeGroup<LottieVector1D>
+    var rotationZ: KeyframeGroup<LottieVector1D>
 
   /// The opacity of the transform.
-  let opacity: KeyframeGroup<LottieVector1D>
+    var opacity: KeyframeGroup<LottieVector1D>
 
   // MARK: Private
 

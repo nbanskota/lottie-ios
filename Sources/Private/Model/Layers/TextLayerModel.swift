@@ -6,11 +6,11 @@
 //
 
 /// A layer that holds text.
-final class TextLayerModel: LayerModel {
+public class TextLayerModel: LayerModel {
 
   // MARK: Lifecycle
 
-  required init(from decoder: Decoder) throws {
+  public required init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: TextLayerModel.CodingKeys.self)
     let textContainer = try container.nestedContainer(keyedBy: TextCodingKeys.self, forKey: .textGroup)
     text = try textContainer.decode(KeyframeGroup<TextDocument>.self, forKey: .text)
@@ -35,7 +35,7 @@ final class TextLayerModel: LayerModel {
   /// Text animators
   let animators: [TextAnimator]
 
-  override func encode(to encoder: Encoder) throws {
+    public override func encode(to encoder: Encoder) throws {
     try super.encode(to: encoder)
     var container = encoder.container(keyedBy: CodingKeys.self)
     var textContainer = container.nestedContainer(keyedBy: TextCodingKeys.self, forKey: .textGroup)

@@ -80,11 +80,11 @@ public enum BlendMode: Int, Codable {
 // MARK: - LayerModel
 
 /// A base top container for shapes, images, and other view objects.
-class LayerModel: Codable, DictionaryInitializable {
+public class LayerModel: Codable, DictionaryInitializable {
 
   // MARK: Lifecycle
 
-  required init(from decoder: Decoder) throws {
+ public required init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: LayerModel.CodingKeys.self)
     name = try container.decodeIfPresent(String.self, forKey: .name) ?? "Layer"
     index = try container.decodeIfPresent(Int.self, forKey: .index) ?? .random(in: Int.min...Int.max)
@@ -163,13 +163,13 @@ class LayerModel: Codable, DictionaryInitializable {
   // MARK: Internal
 
   /// The readable name of the layer
-  let name: String
+  public let name: String
 
   /// The index of the layer
   let index: Int
 
   /// The type of the layer.
-  let type: LayerType
+  public let type: LayerType
 
   /// The coordinate space
   let coordinateSpace: CoordinateSpace
@@ -183,7 +183,7 @@ class LayerModel: Codable, DictionaryInitializable {
   let startTime: Double
 
   /// The transform of the layer
-  let transform: Transform
+  public let transform: Transform
 
   /// The index of the parent layer, if applicable.
   let parent: Int?

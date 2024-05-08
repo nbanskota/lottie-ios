@@ -137,10 +137,10 @@ public final class LottieAnimation: Codable, Sendable, DictionaryInitializable {
   let type: CoordinateSpace
 
   /// The height of the composition in points.
-  let width: Double
+    var width: Double
 
   /// The width of the composition in points.
-  let height: Double
+    var height: Double
 
   /// The list of animation layers
   let layers: [LayerModel]
@@ -176,4 +176,17 @@ public final class LottieAnimation: Codable, Sendable, DictionaryInitializable {
       allowedReducedMotionMarkerNames.contains(marker.name.lowercased())
     })
   }
+    
+    public func getWidth() -> Double{
+        return width
+    }
+    public func getHeight()-> Double{
+        return height
+    }
+    public func setWidth(width: Double){
+        self.width = width
+    }
+    public func setHeight(height: Double){
+        self.height = height
+    }
 }

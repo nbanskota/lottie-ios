@@ -6,44 +6,52 @@
 //
 
 import Foundation
-struct CompositionProps: Equatable {
+public class CompositionProps: Equatable {
     
-    let type: LayerType
-    var width: CGFloat?
-    var height: CGFloat?
-    var offsetX: CGFloat?
-    var offsetY: CGFloat?
+    let id: String
+    var size: CGSize?
+    var offsetX: Double?
+    var offsetY: Double?
     var opacity: Double?
     var text: String?
     var fontName: String?
     var fontWeight: Int?
     var scaleFactor: Double?
+    public var animatingLayer: LayerModel
 
     
-    init(type: LayerType, width: CGFloat? = nil, height: CGFloat? = nil, offsetX: CGFloat? = nil, offsetY: CGFloat? = nil, text: String? = nil, fontName: String? = nil, fontWeight: Int? = nil, scaleFactor: Double? = nil, additionalProperties: [String: Any]? = nil) {
-        self.type = type
-        self.width = width
-        self.height = height
+    init(animatingLayer: LayerModel, size: CGSize? = nil, offsetX: Double? = nil, offsetY: Double? = nil, text: String? = nil, fontName: String? = nil, fontWeight: Int? = nil, scaleFactor: Double? = nil) {
+        self.id = UUID().uuidString
+        self.size = size
         self.offsetX = offsetX
         self.offsetY = offsetY
         self.text = text
         self.fontName = fontName
         self.fontWeight = fontWeight
         self.scaleFactor = scaleFactor
-
+        self.animatingLayer = animatingLayer
     }
     
-    static func ==(lhs: CompositionProps, rhs: CompositionProps) -> Bool {
+    public func setAnimatingLayer(layer: LayerModel){
+        self.animatingLayer = layer
+    }
+    
+    public  func setSize(width: Double, height: Double){
+        self.size = CGSize(width: width, height: height)
+    }
+    
+    public func getHeight()-> Double{
+        return Double(self.size?.height ?? 0)
+    }
+    
+    public  func getWidth()-> Double{
+        return Double(self.size?.width ?? 0)
+    }
+    
+    
+    public static func ==(lhs: CompositionProps, rhs: CompositionProps) -> Bool {
         // Compare all properties for equality
-        return lhs.type == rhs.type &&
-            lhs.width == rhs.width &&
-            lhs.height == rhs.height &&
-            lhs.offsetX == rhs.offsetX &&
-            lhs.offsetY == rhs.offsetY &&
-            lhs.opacity == rhs.opacity &&
-            lhs.text == rhs.text &&
-            lhs.fontName == rhs.fontName &&
-            lhs.fontWeight == rhs.fontWeight &&
-            lhs.scaleFactor == rhs.scaleFactor 
+        return
+            lhs.id == rhs.id
     }
 }

@@ -6,11 +6,11 @@
 //
 
 /// A layer that holds another animation composition.
-final class PreCompLayerModel: LayerModel {
+public class PreCompLayerModel: LayerModel {
 
   // MARK: Lifecycle
 
-  required init(from decoder: Decoder) throws {
+ public required init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: PreCompLayerModel.CodingKeys.self)
     referenceID = try container.decode(String.self, forKey: .referenceID)
     timeRemapping = try container.decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .timeRemapping)
@@ -40,12 +40,26 @@ final class PreCompLayerModel: LayerModel {
   let timeRemapping: KeyframeGroup<LottieVector1D>?
 
   /// Precomp Width
-  let width: Double
+  var width: Double
 
   /// Precomp Height
-  let height: Double
+  var height: Double
+    
+    //----------------N10 public methods-----------
+    public func getReferenceID() -> String{
+        return referenceID
+    }
 
-  override func encode(to encoder: Encoder) throws {
+    public func getWidth() -> Double{
+        return width
+    }
+
+    public func getHeight() -> Double{
+        return height
+    }
+    //---------------------------------------------
+
+  override public func encode(to encoder: Encoder) throws {
     try super.encode(to: encoder)
     var container = encoder.container(keyedBy: CodingKeys.self)
     try container.encode(referenceID, forKey: .referenceID)

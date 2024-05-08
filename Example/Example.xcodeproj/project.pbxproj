@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		08E6CF822A86C35B00A6D92F /* LottieSwitchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6CF812A86C35B00A6D92F /* LottieSwitchRow.swift */; };
 		08E6CF842A86C49300A6D92F /* ControlsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6CF832A86C49300A6D92F /* ControlsDemoView.swift */; };
 		ABD0BC842B5B451C003D7587 /* SwiftUIInteroperabilityDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD0BC832B5B451C003D7587 /* SwiftUIInteroperabilityDemoView.swift */; };
+		DD8E04E42BE4A62100238F9B /* Animation10View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E04E32BE4A62100238F9B /* Animation10View.swift */; };
+		DD8E04E62BE8604E00238F9B /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E04E52BE8604E00238F9B /* LottieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		2E0F2FB627602C1500B65DE3 /* .. */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ..; sourceTree = "<group>"; };
 		2E3EEB372763C68C00287EEA /* Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Samples; path = ../Tests/Samples; sourceTree = "<group>"; };
 		ABD0BC832B5B451C003D7587 /* SwiftUIInteroperabilityDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIInteroperabilityDemoView.swift; sourceTree = "<group>"; };
+		DD8E04E32BE4A62100238F9B /* Animation10View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation10View.swift; sourceTree = "<group>"; };
+		DD8E04E52BE8604E00238F9B /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				0820D59A2A8ACE64007D705C /* LottieButtonRow.swift */,
 				08E359972A55FFC600141956 /* Example.entitlements */,
 				607FACD11AFB9204008FA782 /* Products */,
+				DD8E04E32BE4A62100238F9B /* Animation10View.swift */,
+				DD8E04E52BE8604E00238F9B /* LottieView.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
+				DD8E04E72BE8625E00238F9B /* XCLocalSwiftPackageReference ".." */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -167,12 +174,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD8E04E42BE4A62100238F9B /* Animation10View.swift in Sources */,
 				0820D59B2A8ACE64007D705C /* LottieButtonRow.swift in Sources */,
 				ABD0BC842B5B451C003D7587 /* SwiftUIInteroperabilityDemoView.swift in Sources */,
 				08E359942A55FFC400141956 /* LottieViewLayoutDemoView.swift in Sources */,
 				08E359922A55FFC400141956 /* ExampleApp.swift in Sources */,
 				085D97872A5E0DB600C78D18 /* AnimationPreviewView.swift in Sources */,
 				08E6CF822A86C35B00A6D92F /* LottieSwitchRow.swift in Sources */,
+				DD8E04E62BE8604E00238F9B /* LottieView.swift in Sources */,
 				085D97852A5DF94C00C78D18 /* AnimationListView.swift in Sources */,
 				08E6CF842A86C49300A6D92F /* ControlsDemoView.swift in Sources */,
 			);
@@ -198,6 +207,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -248,6 +258,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -412,6 +423,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		DD8E04E72BE8625E00238F9B /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		08E3599E2A56004100141956 /* Lottie */ = {
