@@ -9,35 +9,48 @@ import Foundation
 public class CompositionProps: Equatable {
     
     let id: String
-    var size: CGSize?
-    var offsetX: Double?
-    var offsetY: Double?
-    var opacity: Double?
-    var text: String?
-    var fontName: String?
-    var fontWeight: Int?
-    var scaleFactor: Double?
+    var size: CGSize? = nil
+    var offsetX: Double? = nil
+    var offsetY: Double? = nil
+    var opacity: Double? = nil
+    var text: String? = nil
+    var fontName: String? = nil
+    var fontWeight: Int? = nil
+    var scaleFactor: Double? = nil
     public var animatingLayer: LayerModel
 
     
-    init(animatingLayer: LayerModel, size: CGSize? = nil, offsetX: Double? = nil, offsetY: Double? = nil, text: String? = nil, fontName: String? = nil, fontWeight: Int? = nil, scaleFactor: Double? = nil) {
-        self.id = UUID().uuidString
-        self.size = size
-        self.offsetX = offsetX
-        self.offsetY = offsetY
-        self.text = text
-        self.fontName = fontName
-        self.fontWeight = fontWeight
-        self.scaleFactor = scaleFactor
+    init(animatingLayer: LayerModel) {
+        self.id = animatingLayer.name
         self.animatingLayer = animatingLayer
+        switch animatingLayer.type {
+        case .precomp:
+            self.size = CGSize(width: (animatingLayer as! PreCompLayerModel).width, height: (animatingLayer as! PreCompLayerModel).height)
+            break
+        case .solid:
+            break
+        case .image:
+            break
+        case .null:
+            break
+        case .shape:
+            break
+        case .text:
+            break
+        case .unknown:
+            break
+        }
     }
+
     
-    public func setAnimatingLayer(layer: LayerModel){
-        self.animatingLayer = layer
-    }
-    
+    //only applicable for Precomp layer
     public  func setSize(width: Double, height: Double){
-        self.size = CGSize(width: width, height: height)
+        if(self.animatingLayer.type == .precomp){
+            self.size = CGSize(width: width, height: height)
+            (self.animatingLayer as! PreCompLayerModel).width = width
+            (self.animatingLayer as! PreCompLayerModel).height = height
+        }
+        
     }
     
     public func getHeight()-> Double{

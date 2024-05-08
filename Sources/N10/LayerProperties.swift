@@ -19,7 +19,6 @@ public protocol LayerPropertiesObserver  {
 }
 
 public class ObserverManager : ObservableObject {
-    @Published public var observableChange: Int = 0
     private var observers: [LayerPropertiesObserver]
     
     public init() {
@@ -38,7 +37,6 @@ public class ObserverManager : ObservableObject {
         for observer in observers {
             if let width = value?.getWidth(), let height = value?.getHeight(), width != 0 && height != 0{
                 observer.updateSize(width: width, height: height, forKey: key)
-                observableChange += 1
             }
           
         }

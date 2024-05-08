@@ -10,12 +10,12 @@ public struct Lottie10View: ViewRepresentable{
     
     let name: String    //This is lottieName
     let loop: LottieLoopMode    //Lottie loop mode
-    let animationView: LottieAnimationView //actual lottie animation view
+    let animationView: LottieN10AnimationView // lottie animation view
     let speed: CGFloat      //speed of the animation
     let scaleFactor: CGFloat    //How small or big the view can be: Default is set to 3 while initializing
     let callback: LayerPropsCallback
     var layerProperties : LayerProperties?
-
+    
     // Add state variables to hold width and height
     
     public init(name: String,
@@ -29,61 +29,42 @@ public struct Lottie10View: ViewRepresentable{
         self.loop = loop
         self.speed = speed
         self.animationView = LottieN10AnimationView(name: name)
+        self.animationView.setLayerProperties(layerProperties: layerProps)
         self.scaleFactor = scaleFactor
         self.callback = callback
         self.layerProperties = layerProps
         layerProperties?.getObserverManger().addObserver(self)
-
-
+        
+        
     }
     
     public func makeUIView(context: Context) -> UIView {
         
         let customView = UIView(frame: .zero)
         customView.addSubview(self.animationView)
+        
         self.animationView.translatesAutoresizingMaskIntoConstraints = false
         self.animationView.heightAnchor.constraint(equalTo: customView.heightAnchor).isActive = true
         self.animationView.widthAnchor.constraint(equalTo: customView.widthAnchor).isActive = true
         
-        
         animationView.loopMode = loop
         animationView.play()
         animationView.animationSpeed = speed
+        
         if let animatingLayers = animationView.animation?.layers{
             for animatingLayer in animatingLayers {
                 var compositionProps = CompositionProps(animatingLayer: animatingLayer)
-//                switch animatingLayer.type {
-//                case .precomp: // A layer that holds another animation composition./
-//
-//                    break
-//                case .solid:   //A layer that holds a solid color.
-//                    
-//                    break
-//                case .image:   // A layer that holds an image.
-//              
-//                    break
-//                case .null:
-//                    break
-//                case .shape:   // A layer that holds vector shape objects.
-//           
-//                    break
-//                case .text:    //A layer that holds text.
-//                    break
-//                case .unknown:
-//                    break
-//                }
-                layerProperties?.updateValue(compositionProps, forKey: animatingLayer.name)
+                layerProperties?[animatingLayer.name] = compositionProps
             }
             callback(layerProperties)
         }
         
         animationView.transform = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
-        let layers = animationView.layer
         return customView
     }
     
     public func updateUIView(_ uiView: UIView, context: Context) {
-
+        
         
     }
     
@@ -109,15 +90,15 @@ extension LayerModel: CustomDebugStringConvertible{
 
 extension Lottie10View: LayerPropertiesObserver {
     public func updateSize(width: Double?, height: Double?, forKey key: String) {
-        NSLog("Size updated for key:  %@", key)
-        self.animationView.forceDisplayUpdate()
+        self.animationView.updateAnimation(forLayerWithKey: key)
+  
         
- 
+        
     }
     
     public func layerProperties(_ layerProperties: LayerProperties, didUpdateValue value: CompositionProps?, forKey key: String) {
-            NSLog("Previous Anchor Point %@", key)
-        }
+        NSLog("Previous Anchor Point %@", key)
+    }
     
     
 }

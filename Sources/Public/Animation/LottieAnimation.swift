@@ -95,6 +95,7 @@ public final class LottieAnimation: Codable, Sendable, DictionaryInitializable {
       markerMap = nil
     }
   }
+    
 
   // MARK: Public
 
@@ -143,7 +144,7 @@ public final class LottieAnimation: Codable, Sendable, DictionaryInitializable {
     var height: Double
 
   /// The list of animation layers
-  let layers: [LayerModel]
+  var layers: [LayerModel]
 
   /// The list of glyphs used for text rendering
   let glyphs: [Glyph]?
