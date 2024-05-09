@@ -18,7 +18,7 @@ public class LottieN10AnimationView: LottieAnimationView{
     func updateAnimation(newAnimation: LottieAnimation){
         self.animation = newAnimation
         self.play()
-        relaodLottie()
+      //  relaodLottie()
     }
     
     func updateAnimation(forLayerWithKey key: String){
@@ -29,7 +29,6 @@ public class LottieN10AnimationView: LottieAnimationView{
             if let chest = layer as? PreCompLayerModel{
                 NSLog("\(key) :: w: %f, h: %f", chest.width, chest.height)
             }
-      
         }
     }
     

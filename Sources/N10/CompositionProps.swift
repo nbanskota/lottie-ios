@@ -50,8 +50,8 @@ public class CompositionProps: Equatable {
             (self.animatingLayer as! PreCompLayerModel).width = width
             (self.animatingLayer as! PreCompLayerModel).height = height
         }
-        
     }
+    
     
     public func getHeight()-> Double{
         return Double(self.size?.height ?? 0)

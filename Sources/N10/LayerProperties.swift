@@ -15,7 +15,6 @@ import SwiftUI
 
 public protocol LayerPropertiesObserver  {
     func layerProperties(_ layerProperties: LayerProperties, didUpdateValue value: CompositionProps?, forKey key: String)
-    func updateSize(width: Double?, height: Double?, forKey: String)
 }
 
 public class ObserverManager : ObservableObject {
@@ -35,9 +34,7 @@ public class ObserverManager : ObservableObject {
     
     public func notifyObservers(_ layerProperties: LayerProperties, didUpdateValue value: CompositionProps?, forKey key: String) {
         for observer in observers {
-            if let width = value?.getWidth(), let height = value?.getHeight(), width != 0 && height != 0{
-                observer.updateSize(width: width, height: height, forKey: key)
-            }
+            observer.layerProperties(layerProperties, didUpdateValue: value, forKey: key)
           
         }
     }

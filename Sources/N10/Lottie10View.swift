@@ -89,15 +89,13 @@ extension LayerModel: CustomDebugStringConvertible{
 
 
 extension Lottie10View: LayerPropertiesObserver {
-    public func updateSize(width: Double?, height: Double?, forKey key: String) {
-        self.animationView.updateAnimation(forLayerWithKey: key)
-  
-        
-        
-    }
-    
+
     public func layerProperties(_ layerProperties: LayerProperties, didUpdateValue value: CompositionProps?, forKey key: String) {
-        NSLog("Previous Anchor Point %@", key)
+        let newValueProvider = PointValueProvider(CGPoint(x: 0, y: -200))
+        let keyPath = AnimationKeypath(keypath: "Boat.Boat_Water_Loop.Air.Group.Transform.Position")
+        self.animationView.setValueProvider(newValueProvider, keypath: keyPath)
+        self.animationView.updateAnimation(forLayerWithKey: key)
+        self.animationView.logHierarchyKeypaths()
     }
     
     
