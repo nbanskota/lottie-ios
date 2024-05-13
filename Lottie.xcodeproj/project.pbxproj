@@ -1151,6 +1151,15 @@
 		D453D8B228FF9EA900D3F49C /* DefaultAnimationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D453D8B028FF9E3A00D3F49C /* DefaultAnimationCache.swift */; };
 		D453D8B328FF9EAA00D3F49C /* DefaultAnimationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D453D8B028FF9E3A00D3F49C /* DefaultAnimationCache.swift */; };
 		D453D8B428FF9EAA00D3F49C /* DefaultAnimationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D453D8B028FF9E3A00D3F49C /* DefaultAnimationCache.swift */; };
+		DDDFCF942BEC9D50009F2CA6 /* LottieLayerDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFCF922BEC9D50009F2CA6 /* LottieLayerDict.swift */; };
+		DDDFCF952BEC9F36009F2CA6 /* LottieLayerDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFCF922BEC9D50009F2CA6 /* LottieLayerDict.swift */; };
+		DDDFCF972BEC9F37009F2CA6 /* LottieLayerDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFCF922BEC9D50009F2CA6 /* LottieLayerDict.swift */; };
+		DDDFCF992BEC9F93009F2CA6 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFCF982BEC9F93009F2CA6 /* Composition.swift */; };
+		DDDFCF9A2BEC9F93009F2CA6 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFCF982BEC9F93009F2CA6 /* Composition.swift */; };
+		DDDFCF9B2BEC9F93009F2CA6 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFCF982BEC9F93009F2CA6 /* Composition.swift */; };
+		DDDFCF9D2BECE825009F2CA6 /* NewLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFCF9C2BECE825009F2CA6 /* NewLottieView.swift */; };
+		DDDFCF9E2BECE825009F2CA6 /* NewLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFCF9C2BECE825009F2CA6 /* NewLottieView.swift */; };
+		DDDFCF9F2BECE825009F2CA6 /* NewLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFCF9C2BECE825009F2CA6 /* NewLottieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1476,6 +1485,9 @@
 		D453D8AA28FE6EE300D3F49C /* LottieAnimationCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationCache.swift; sourceTree = "<group>"; };
 		D453D8AE28FF9BC600D3F49C /* AnimationCacheProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCacheProviderTests.swift; sourceTree = "<group>"; };
 		D453D8B028FF9E3A00D3F49C /* DefaultAnimationCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAnimationCache.swift; sourceTree = "<group>"; };
+		DDDFCF922BEC9D50009F2CA6 /* LottieLayerDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieLayerDict.swift; sourceTree = "<group>"; };
+		DDDFCF982BEC9F93009F2CA6 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
+		DDDFCF9C2BECE825009F2CA6 /* NewLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2244,6 +2256,7 @@
 		2EAF59C027A0798600E00531 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DDDFCF932BEC9D50009F2CA6 /* N10 */,
 				2EAF59C127A0798700E00531 /* Public */,
 				2EAF59F327A0798700E00531 /* Private */,
 			);
@@ -2444,6 +2457,16 @@
 				6C48785F2901D8C70005AF07 /* DotLottieImageProvider.swift */,
 			);
 			path = DotLottie;
+			sourceTree = "<group>";
+		};
+		DDDFCF932BEC9D50009F2CA6 /* N10 */ = {
+			isa = PBXGroup;
+			children = (
+				DDDFCF982BEC9F93009F2CA6 /* Composition.swift */,
+				DDDFCF922BEC9D50009F2CA6 /* LottieLayerDict.swift */,
+				DDDFCF9C2BECE825009F2CA6 /* NewLottieView.swift */,
+			);
+			path = N10;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3150,6 +3173,7 @@
 				08E206EB2A56014E002DCE17 /* BehaviorsConfigurableView.swift in Sources */,
 				2E9C967B2822F43100677516 /* GradientFillRenderer.swift in Sources */,
 				2E9C97352822F43100677516 /* GradientAnimations.swift in Sources */,
+				DDDFCF9D2BECE825009F2CA6 /* NewLottieView.swift in Sources */,
 				6C48780528FF20140005AF07 /* DotLottieUtils.swift in Sources */,
 				2E9C96B42822F43100677516 /* AnyNodeProperty.swift in Sources */,
 				2EAF5AF827A0798700E00531 /* FloatValueProvider.swift in Sources */,
@@ -3212,6 +3236,7 @@
 				2E9C96E72822F43100677516 /* ImageLayer.swift in Sources */,
 				2E9C972C2822F43100677516 /* StarAnimation.swift in Sources */,
 				2E9C96E12822F43100677516 /* LayerModel+makeAnimationLayer.swift in Sources */,
+				DDDFCF992BEC9F93009F2CA6 /* Composition.swift in Sources */,
 				2E9C96A82822F43100677516 /* FillNode.swift in Sources */,
 				2EAF5ACB27A0798700E00531 /* LottieAnimationViewBase.swift in Sources */,
 				2E9C96CC2822F43100677516 /* ShapeRenderLayer.swift in Sources */,
@@ -3227,6 +3252,7 @@
 				2EAF5AE627A0798700E00531 /* LRUAnimationCache.swift in Sources */,
 				08C001FD2A46150D00AB54BA /* URL+ZIP.swift in Sources */,
 				2E9C962D2822F43100677516 /* Glyph.swift in Sources */,
+				DDDFCF942BEC9D50009F2CA6 /* LottieLayerDict.swift in Sources */,
 				2E9C96D52822F43100677516 /* RenderNode.swift in Sources */,
 				2E9C971D2822F43100677516 /* CombinedShapeAnimation.swift in Sources */,
 				2EAF5B0127A0798700E00531 /* PointValueProvider.swift in Sources */,
@@ -3463,6 +3489,7 @@
 				6C48780628FF20140005AF07 /* DotLottieUtils.swift in Sources */,
 				2E9C96B52822F43100677516 /* AnyNodeProperty.swift in Sources */,
 				08E207312A56014E002DCE17 /* WillDisplayProviding.swift in Sources */,
+				DDDFCF9E2BECE825009F2CA6 /* NewLottieView.swift in Sources */,
 				2EAF5AF927A0798700E00531 /* FloatValueProvider.swift in Sources */,
 				2E9C968E2822F43100677516 /* PassThroughOutputNode.swift in Sources */,
 				08E207402A56014E002DCE17 /* SetBehaviorsProviding.swift in Sources */,
@@ -3525,6 +3552,7 @@
 				2EAF5ACC27A0798700E00531 /* LottieAnimationViewBase.swift in Sources */,
 				2E9C96CD2822F43100677516 /* ShapeRenderLayer.swift in Sources */,
 				08E6CF8D2A86E26F00A6D92F /* LottieSwitch.swift in Sources */,
+				DDDFCF9A2BEC9F93009F2CA6 /* Composition.swift in Sources */,
 				5721092029119F3100169699 /* BezierPathRoundExtension.swift in Sources */,
 				ABF033B52A7B0ABA00F8C228 /* AnyEquatable.swift in Sources */,
 				08E2070A2A56014E002DCE17 /* EpoxyableView+SwiftUIView.swift in Sources */,
@@ -3540,6 +3568,7 @@
 				08C002D92A46196300AB54BA /* URL+ZIP.swift in Sources */,
 				2E9C962E2822F43100677516 /* Glyph.swift in Sources */,
 				2E9C96D62822F43100677516 /* RenderNode.swift in Sources */,
+				DDDFCF952BEC9F36009F2CA6 /* LottieLayerDict.swift in Sources */,
 				2E9C971E2822F43100677516 /* CombinedShapeAnimation.swift in Sources */,
 				2EAF5B0227A0798700E00531 /* PointValueProvider.swift in Sources */,
 				08E207522A56014E002DCE17 /* ClassReference.swift in Sources */,
@@ -3750,6 +3779,7 @@
 				08E206ED2A56014E002DCE17 /* BehaviorsConfigurableView.swift in Sources */,
 				6C48780728FF20140005AF07 /* DotLottieUtils.swift in Sources */,
 				2E9C96B62822F43100677516 /* AnyNodeProperty.swift in Sources */,
+				DDDFCF9F2BECE825009F2CA6 /* NewLottieView.swift in Sources */,
 				2EAF5AFA27A0798700E00531 /* FloatValueProvider.swift in Sources */,
 				2E9C968F2822F43100677516 /* PassThroughOutputNode.swift in Sources */,
 				2EAF5AB827A0798700E00531 /* CompatibleAnimationKeypath.swift in Sources */,
@@ -3812,6 +3842,7 @@
 				2E9C96E32822F43100677516 /* LayerModel+makeAnimationLayer.swift in Sources */,
 				2E9C96AA2822F43100677516 /* FillNode.swift in Sources */,
 				2EAF5ACD27A0798700E00531 /* LottieAnimationViewBase.swift in Sources */,
+				DDDFCF9B2BEC9F93009F2CA6 /* Composition.swift in Sources */,
 				2E9C96CE2822F43100677516 /* ShapeRenderLayer.swift in Sources */,
 				6C48780428FF20140005AF07 /* DotLottieFile.swift in Sources */,
 				5721092129119F3100169699 /* BezierPathRoundExtension.swift in Sources */,
@@ -3827,6 +3858,7 @@
 				08C002E12A46196300AB54BA /* Data+Compression.swift in Sources */,
 				2E9C971F2822F43100677516 /* CombinedShapeAnimation.swift in Sources */,
 				2EAF5B0327A0798700E00531 /* PointValueProvider.swift in Sources */,
+				DDDFCF972BEC9F37009F2CA6 /* LottieLayerDict.swift in Sources */,
 				2EAF5AE227A0798700E00531 /* Keyframe.swift in Sources */,
 				2E9C969E2822F43100677516 /* StarNode.swift in Sources */,
 				A404605B2832C52B00ACFEDC /* BlendMode+Filter.swift in Sources */,
